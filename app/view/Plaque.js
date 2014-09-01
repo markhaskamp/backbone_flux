@@ -5,6 +5,5 @@ var PlaqueView = Backbone.View.extend({
     return this;
   }
 
-
 });
 

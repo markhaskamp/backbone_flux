@@ -1,4 +1,6 @@
 var eddie_view;
+var ice_view;
+var plaque_view;
 
 $('document').ready(function() {
 
@@ -9,5 +11,5 @@ $('document').ready(function() {
   eddie_view.render();
   ice_view.render();
   plaque_view.render();
-
 });
+
