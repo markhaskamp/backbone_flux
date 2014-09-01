@@ -1,7 +1,7 @@
 var PlaqueView = Backbone.View.extend({
 
   initialize: function() {
-    myDispatcher.register(this.bar);
+    myDispatcher.register(this.handleEvents);
   },
 
   render: function() {
@@ -9,8 +9,10 @@ var PlaqueView = Backbone.View.extend({
     return this;
   },
 
-  bar: function(payload) {
-    plaque_view.render();
+  handleEvents: function(payload) {
+    if (payload.actionType === 'appLoad') {
+      plaque_view.render();
+    }
   }
 
 });

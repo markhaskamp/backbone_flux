@@ -1,7 +1,7 @@
 var IceView = Backbone.View.extend({
 
   initialize: function() {
-    myDispatcher.register(this.foo);
+    myDispatcher.register(this.handleEvents);
   },
 
   render: function() {
@@ -9,8 +9,10 @@ var IceView = Backbone.View.extend({
     return this;
   },
 
-  foo: function(payload) {
-    ice_view.render();
+  handleEvents: function(payload) {
+    if (payload.actionType === 'appLoad') {
+      ice_view.render();
+    }
   }
 
 
