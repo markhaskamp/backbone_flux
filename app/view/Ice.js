@@ -5,7 +5,7 @@ var IceView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html("<hr/><h3>we excel on ice</h3>");
+    this.$el.html(this.myHtml());
     return this;
   },
 
@@ -13,7 +13,9 @@ var IceView = Backbone.View.extend({
     if (payload.actionType === 'appLoad') {
       ice_view.render();
     }
-  }
+  },
+
+  myHtml: _.template("<hr/><h3>we excel on ice</h3>")
 
 
 });

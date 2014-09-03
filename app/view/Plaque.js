@@ -5,7 +5,7 @@ var PlaqueView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html("<hr/><h3>always read the plaque</h3>");
+    this.$el.html(this.myHtml());
     return this;
   },
 
@@ -13,7 +13,9 @@ var PlaqueView = Backbone.View.extend({
     if (payload.actionType === 'appLoad') {
       plaque_view.render();
     }
-  }
+  },
+
+  myHtml: _.template("<hr/><h3>always read the plaque</h3>")
 
 });
 
