@@ -5,7 +5,7 @@ var EddieView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html("<hr/><h3>eddie would go</h3>");
+    this.$el.html(this.myHtml({}));
     return this;
   },
 
@@ -13,7 +13,9 @@ var EddieView = Backbone.View.extend({
     if (payload.actionType === 'appLoad') {
       eddie_view.render();
     }
-  }
+  },
+
+  myHtml: _.template('<hr/><h3>eddie would go</h3>')
 
 
 });
